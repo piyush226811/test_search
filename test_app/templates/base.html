@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Autocomplete</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+
+<style type="text/css">
+body { margin: 0; padding: 0; border: 0; min-width: 320px; color: #777; }
+        html, input, select,.pure-g [class *= "pure-u"] { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.02em; }
+
+        h1{ color: #4b4b4b; font-family: "Source Sans Pro", sans-serif; font-weight: 300; margin: 0 0 1.2em; }
+        h1 { font-size: 4.5em; color: #1f8dd6; margin: 0 0 .4em; }
+
+        @media (max-width:480px) {
+            h1 { font-size: 3em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.5em; }
+            td:first-child { white-space: normal; }
+        }
+
+        /* Pure CSS */
+        input[type="text"] { border-radius: 0 !important; }
+/* autoComplete styles */
+        .autocomplete-suggestions {
+            text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+
+            /* core styles should not be changed */
+            position: absolute; display: none; z-index: 9999; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+        }
+        .autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; font-size: 1.02em; color: #333; }
+        .autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
+        .autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+</head>
+<body>
+
+<form onsubmit="$('#hero-demo').blur().focus();return false;" class="pure-form" style="border-top: 1px solid #eee;border-bottom:1px solid #eee;background:#fafafa;margin:30px 0;padding:20px 10px;text-align:center">
+        <input id="hero-demo" autofocus type="text" name="q" placeholder="Search ..." style="width:100%;max-width:600px;outline:0">
+    </form>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="{{STATIC_URL}}jquery.auto-complete.js"></script>
+</body>
+</html>

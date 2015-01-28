@@ -1,0 +1,21 @@
+{% include 'base.html'%}
+<script>
+$(function() {
+    $("#hero-demo").autoComplete({
+        source: function(term, response){
+            try { xhr.abort(); } catch(e){}
+            var xhr = $.getJSON(
+                'http://127.0.0.1:8000/api/v1/search/country',
+                { q: term },
+                function(data){
+                    var suggestion = [];
+                    for (index = 0; index < data.length; index++) {
+                        suggestion.push(data[index].name);
+                    }
+                    response( suggestion );
+                }
+            );
+        }
+    });
+});
+</script>
